@@ -1,0 +1,12 @@
+# Conteúdo interno do produto — NUNCA publicar (o site é público)
+BLUEPRINT-DULCE-FIT.md
+PROMPTS-IMAGENES.md
+PROMPT-SESSAO-BONUS.txt
+PROMPT-SESSAO-CLAUDE-CODE.txt
+recetas.json
+paginas-editoriais.json
+design-tokens.json
+bono-*.json
+
+# Originais pesados das imagens (só os .jpg otimizados vão pro site)
+img/*.png

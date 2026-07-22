@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30 Recetas Dulcemente Fit | Repostería para horno y airfryer</title>
+<meta name="description" content="30 recetas de postres fit sin azúcar añadida, con conversión para airfryer. Ebook digital con acceso inmediato más 3 bonos gratis.">
+
+<!-- ============================================================
+     CONFIGURACIÓN: editar solo este bloque antes de publicar
+     ============================================================ -->
+<script>
+const CONFIG = {
+  PIXEL_ID: "REEMPLAZAR_PIXEL_ID",
+  CHECKOUT_URL: "https://REEMPLAZAR-CHECKOUT-URL",   // Kiwify / Lemon Squeezy
+  EMAIL_PARAM: "email",         // Kiwify: "email" | Lemon Squeezy: "checkout[email]"
+  PRECIO_ANTES: "$14 USD",
+  PRECIO_AHORA: "$7 USD",
+  TIMER_MINUTOS: 15
+};
+</script>
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', CONFIG.PIXEL_ID);
+fbq('track', 'PageView');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --rosa:#F5C6D0; --amarillo:#F7E08E; --verde:#C8DFA8;
+  --celeste:#A8D8E8; --durazno:#F5CBA7; --lila:#D7C4E8;
+  --choco:#6B3A2A; --banner:#C0392B; --texto:#3D2B24;
+  --tip-rosa:#B85C71; --crema:#FFF9F4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:'Nunito',sans-serif;color:var(--texto);background:var(--crema);line-height:1.55;font-size:17px}
+h1,h2,h3,.display{font-family:'Baloo 2',cursive;line-height:1.12;color:var(--choco)}
+img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+section{padding:64px 0}
+
+/* Banner-fita de título (assinatura do guia) */
+.fita{display:inline-block;background:var(--banner);color:#fff;font-family:'Baloo 2',cursive;
+  font-weight:700;font-size:clamp(1.35rem,3.2vw,1.9rem);padding:10px 30px;position:relative;
+  box-shadow:0 4px 0 rgba(0,0,0,.12);transform:rotate(-1deg)}
+.fita::before,.fita::after{content:"";position:absolute;top:8px;border:14px solid var(--banner);z-index:-1;filter:brightness(.82)}
+.fita::before{left:-20px;border-left-color:transparent}
+.fita::after{right:-20px;border-right-color:transparent}
+.centro{text-align:center}
+.sec-head{margin-bottom:38px}
+
+/* Botón CTA */
+.btn{display:inline-block;background:var(--banner);color:#fff;font-family:'Baloo 2',cursive;
+  font-weight:700;font-size:1.25rem;padding:17px 42px;border:none;border-radius:999px;cursor:pointer;
+  box-shadow:0 6px 0 #8E2A20;text-decoration:none;transition:transform .12s, box-shadow .12s}
+.btn:hover{transform:translateY(2px);box-shadow:0 4px 0 #8E2A20}
+.btn:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--choco);outline-offset:3px}
+.btn-nota{font-size:.85rem;margin-top:12px;color:var(--choco);font-weight:600}
+
+/* HERO */
+.hero{background:var(--celeste);padding:70px 0 80px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;position:relative;z-index:1}
+.badge{display:inline-block;background:#fff;border-radius:999px;padding:7px 18px;font-weight:800;
+  font-size:.82rem;letter-spacing:.4px;color:var(--choco);margin-bottom:20px}
+.hero h1{font-size:clamp(2.1rem,5vw,3.3rem);font-weight:800;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--banner)}
+.hero p.sub{font-size:1.15rem;margin-bottom:28px;max-width:34ch}
+.hero-foto{background:#fff;border-radius:26px;padding:14px;box-shadow:0 14px 34px rgba(59,42,36,.16);transform:rotate(1.5deg)}
+.hero-foto img{border-radius:18px;aspect-ratio:4/5;width:100%;object-fit:cover}
+.doodle{position:absolute;font-size:2rem;opacity:.5;user-select:none;pointer-events:none}
+
+/* Lo que recibes */
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border-radius:20px;padding:26px 22px;box-shadow:0 6px 18px rgba(59,42,36,.08)}
+.card .ico{font-size:2rem;margin-bottom:12px}
+.card h3{font-size:1.08rem;margin-bottom:8px}
+.card p{font-size:.95rem}
+
+/* Recetas destacadas */
+.recetas-sec{background:var(--amarillo)}
+.grid-recetas{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.receta-chip{background:#fff;border-radius:16px;padding:12px 12px 14px;text-align:center;font-weight:700;
+  font-size:.92rem;box-shadow:0 4px 10px rgba(59,42,36,.08)}
+.receta-chip img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;margin-bottom:8px}
+.recetas-sec .mas{margin-top:26px;font-weight:800;font-size:1.05rem}
+
+/* Diferenciales */
+.dif-sec{background:var(--verde)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.dif{background:#fff;border-radius:20px;padding:24px 26px;display:flex;gap:16px;align-items:flex-start}
+.dif .ico{font-size:1.7rem}
+.dif h3{font-size:1.05rem;margin-bottom:6px}
+.dif p{font-size:.95rem}
+
+/* Bonos */
+.bonos-sec{background:var(--lila)}
+.bono{background:#fff;border-radius:22px;padding:28px;display:grid;grid-template-columns:auto 1fr auto;
+  gap:22px;align-items:center;margin-bottom:18px;box-shadow:0 6px 18px rgba(59,42,36,.08)}
+.bono .num{font-family:'Baloo 2',cursive;font-weight:800;font-size:2.4rem;color:var(--banner);
+  background:var(--rosa);width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.bono h3{font-size:1.2rem;margin-bottom:6px}
+.bono p{font-size:.95rem}
+.bono .valor{text-align:right}
+.bono .valor .tachado{text-decoration:line-through;color:#9c8880;font-size:.95rem}
+.bono .valor .gratis{font-family:'Baloo 2',cursive;font-weight:800;color:var(--banner);font-size:1.3rem}
+.stack-total{background:var(--choco);color:#fff;border-radius:22px;padding:26px;text-align:center;margin-top:26px}
+.stack-total .display{color:#fff;font-size:1.3rem}
+
+/* Precio */
+.precio-sec{background:var(--rosa)}
+.precio-card{background:#fff;border-radius:28px;padding:44px 34px;max-width:520px;margin:0 auto;
+  box-shadow:0 16px 40px rgba(59,42,36,.14);text-align:center}
+.precio-card .antes{font-size:1.05rem;color:#9c8880}
+.precio-card .antes s{font-weight:700}
+.precio-card .ahora{font-family:'Baloo 2',cursive;font-weight:800;font-size:3.2rem;color:var(--banner);margin:6px 0 4px}
+.precio-card .cond{font-size:.9rem;font-weight:700;margin-bottom:22px}
+.timer{background:var(--amarillo);border-radius:14px;padding:12px;font-weight:800;margin:0 0 22px;font-size:1rem}
+.timer b{font-family:'Baloo 2',cursive;font-size:1.3rem;color:var(--choco)}
+.seguro{font-size:.82rem;margin-top:14px;color:#7a675f;font-weight:600}
+
+/* Garantía: card estilo Tip Dulce&Fit */
+.garantia{background:var(--durazno)}
+.tipcard{position:relative;background:var(--tip-rosa);color:#fff;border:3px solid #fff;border-radius:20px;
+  padding:36px 30px 28px;max-width:640px;margin:26px auto 0;text-align:center}
+.tipcard .sello{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:var(--amarillo);
+  color:var(--choco);font-family:'Baloo 2',cursive;font-weight:800;padding:6px 22px;border-radius:999px;font-size:1rem;white-space:nowrap}
+.tipcard h3{color:#fff;font-size:1.4rem;margin-bottom:10px}
+
+/* FAQ */
+.faq details{background:#fff;border-radius:16px;margin-bottom:12px;box-shadow:0 4px 12px rgba(59,42,36,.06);overflow:hidden}
+.faq summary{cursor:pointer;padding:18px 22px;font-weight:800;font-size:1.02rem;list-style:none;position:relative}
+.faq summary::after{content:"+";position:absolute;right:22px;font-family:'Baloo 2',cursive;font-size:1.4rem;color:var(--banner)}
+.faq details[open] summary::after{content:"–"}
+.faq .resp{padding:0 22px 18px;font-size:.96rem}
+
+footer{background:var(--choco);color:#e8d8cf;padding:34px 0;font-size:.85rem;text-align:center}
+footer p+p{margin-top:10px}
+
+/* Modal captura de email */
+.modal-bg{position:fixed;inset:0;background:rgba(43,26,20,.55);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
+.modal-bg.abierto{display:flex}
+.modal{background:#fff;border-radius:24px;padding:36px 30px;max-width:440px;width:100%;text-align:center;position:relative}
+.modal h3{font-size:1.4rem;margin-bottom:8px}
+.modal p{font-size:.95rem;margin-bottom:20px}
+.modal input{width:100%;padding:15px 18px;border:2px solid var(--rosa);border-radius:999px;font-size:1rem;
+  font-family:'Nunito',sans-serif;margin-bottom:14px;text-align:center}
+.modal .cerrar{position:absolute;top:12px;right:18px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#9c8880}
+.modal .error{color:var(--banner);font-size:.85rem;font-weight:700;min-height:1.2em;margin-bottom:8px}
+
+@media(max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;text-align:center}
+  .hero p.sub{margin:0 auto 28px}
+  .hero-foto{max-width:340px;margin:0 auto}
+  .grid-4{grid-template-columns:1fr 1fr}
+  .grid-recetas{grid-template-columns:repeat(2,1fr)}
+  .grid-2{grid-template-columns:1fr}
+  .bono{grid-template-columns:auto 1fr;}
+  .bono .valor{grid-column:2;text-align:left}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <span class="doodle" style="top:8%;left:4%">🍩</span>
+  <span class="doodle" style="top:70%;left:8%">🍓</span>
+  <span class="doodle" style="top:14%;right:6%">🧁</span>
+  <span class="doodle" style="bottom:10%;right:12%">🍫</span>
+  <div class="wrap">
+    <div>
+      <span class="badge">📖 Ebook digital · Acceso inmediato</span>
+      <h1>Vuelve a disfrutar el postre <em>todos los días</em></h1>
+      <p class="sub">30 recetas de repostería fit sin azúcar añadida, con ingredientes de cualquier mercado y conversión para airfryer en cada receta.</p>
+      <button class="btn js-cta" data-origen="hero">Quiero mis recetas ahora</button>
+      <p class="btn-nota">✅ Garantía de 7 días · Recíbelo en tu correo en minutos</p>
+    </div>
+    <div class="hero-foto">
+      <img src="img/portada-mosaico.jpg" alt="Postres del guía Dulce&Fit: donas, brownies, alfajores, cheesecake y cupcakes">
+    </div>
+  </div>
+</header>
+
+<!-- ===================== LO QUE RECIBES ===================== -->
+<section>
+  <div class="wrap">
+    <div class="centro sec-head"><span class="fita">Lo que vas a recibir</span></div>
+    <div class="grid-4">
+      <div class="card"><div class="ico">🥣</div><h3>30 recetas probadas</h3><p>De alfajores y flan a brownies, donas y cheesecake. Todas sin azúcar añadida.</p></div>
+      <div class="card"><div class="ico">🛒</div><h3>Ingredientes simples</h3><p>Avena, huevos, cacao, fruta. Todo se consigue en tu mercado de siempre.</p></div>
+      <div class="card"><div class="ico">🔥</div><h3>Horno y airfryer</h3><p>Cada receta horneada incluye su tiempo y temperatura para airfryer.</p></div>
+      <div class="card"><div class="ico">💡</div><h3>Un tip por receta</h3><p>El secreto de cocina que hace la diferencia entre que salga bien y que salga increíble.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RECETAS DESTACADAS ===================== -->
+<section class="recetas-sec">
+  <div class="wrap centro">
+    <div class="sec-head"><span class="fita">Un vistazo a lo que vas a preparar</span></div>
+    <div class="grid-recetas">
+      <div class="receta-chip"><img src="img/receta-brownies.jpg" alt="Brownies húmedos sin harina" loading="lazy">Brownies húmedos sin harina</div>
+      <div class="receta-chip"><img src="img/receta-donas.jpg" alt="Donas con glaseado rosa" loading="lazy">Donas con glaseado rosa</div>
+      <div class="receta-chip"><img src="img/receta-alfajores.jpg" alt="Alfajores con dulce de leche fit" loading="lazy">Alfajores con dulce de leche fit</div>
+      <div class="receta-chip"><img src="img/receta-flan.jpg" alt="Flan de vainilla sin azúcar" loading="lazy">Flan de vainilla sin azúcar</div>
+      <div class="receta-chip"><img src="img/receta-cheesecake.jpg" alt="Cheesecake de frutos rojos" loading="lazy">Cheesecake de frutos rojos</div>
+      <div class="receta-chip"><img src="img/receta-churros.jpg" alt="Churros de airfryer" loading="lazy">Churros de airfryer</div>
+      <div class="receta-chip"><img src="img/receta-red-velvet.jpg" alt="Red velvet con chantilly" loading="lazy">Red velvet con chantilly</div>
+      <div class="receta-chip"><img src="img/receta-helado.jpg" alt="Helado cremoso de plátano" loading="lazy">Helado cremoso de plátano</div>
+      <div class="receta-chip"><img src="img/receta-galletas.jpg" alt="Galletas de 3 ingredientes" loading="lazy">Galletas de 3 ingredientes</div>
+      <div class="receta-chip"><img src="img/receta-panna-cotta.jpg" alt="Panna cotta con frutos rojos" loading="lazy">Panna cotta con frutos rojos</div>
+    </div>
+    <p class="mas">... y 20 recetas más esperándote adentro 🤍</p>
+  </div>
+</section>
+
+<!-- ===================== DIFERENCIALES ===================== -->
+<section class="dif-sec">
+  <div class="wrap">
+    <div class="centro sec-head"><span class="fita">Por qué este guía es diferente</span></div>
+    <div class="grid-2">
+      <div class="dif"><div class="ico">🌎</div><div><h3>Nuestros clásicos, en versión fit</h3><p>Alfajores, flan, churros, cocadas, chocotorta y pan de elote: los postres con los que creciste, sin azúcar añadida.</p></div></div>
+      <div class="dif"><div class="ico">⏱️</div><div><h3>Recetas sin horno y de pocos pasos</h3><p>Un bloque entero de postres de refrigerador, licuadora y sartén para los días sin tiempo.</p></div></div>
+      <div class="dif"><div class="ico">🍯</div><div><h3>Tú eliges tu endulzante</h3><p>Guía completa de endulzantes incluida: stevia, eritritol, fruto del monje, azúcar de coco o dátiles. Sin marcas, sin complicaciones.</p></div></div>
+      <div class="dif"><div class="ico">📏</div><div><h3>Medidas claras y equivalencias</h3><p>Tazas, gramos y la tabla de conversión de horno a airfryer para que nada falle.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BONOS ===================== -->
+<section class="bonos-sec">
+  <div class="wrap">
+    <div class="centro sec-head">
+      <span class="fita">3 bonos gratis con tu acceso</span>
+      <p style="margin-top:16px;font-weight:700">Todo esto va junto con tu guía, sin pagar nada más:</p>
+    </div>
+    <div class="bono">
+      <div class="num">1</div>
+      <div><h3>Lista de compras fit</h3><p>Todos los ingredientes de las 30 recetas organizados por sección del mercado, con el Kit Inicial de 10 básicos para tu primera compra.</p></div>
+      <div class="valor"><div class="tachado">Valor: $9 USD</div><div class="gratis">GRATIS</div></div>
+    </div>
+    <div class="bono">
+      <div class="num">2</div>
+      <div><h3>Guía de sustituciones inteligentes</h3><p>Qué usar en lugar de azúcar, harina, mantequilla o leche condensada, con proporciones exactas. Adapta cualquier receta de tu familia.</p></div>
+      <div class="valor"><div class="tachado">Valor: $12 USD</div><div class="gratis">GRATIS</div></div>
+    </div>
+    <div class="bono">
+      <div class="num">3</div>
+      <div><h3>Plan de 7 días con postres fit</h3><p>Tu primera semana resuelta: un postre por día, de lo más fácil a lo más impresionante, con las técnicas que vas a dominar en cada uno.</p></div>
+      <div class="valor"><div class="tachado">Valor: $9 USD</div><div class="gratis">GRATIS</div></div>
+    </div>
+    <div class="stack-total">
+      <p class="display">Guía completo + 3 bonos: valor total de $64 USD</p>
+      <p style="margin-top:6px">Hoy te llevas todo por mucho menos 👇</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRECIO ===================== -->
+<section class="precio-sec" id="oferta">
+  <div class="wrap">
+    <div class="centro sec-head"><span class="fita">Garantiza tu acceso hoy</span></div>
+    <div class="precio-card">
+      <p class="antes">De <s class="js-precio-antes"></s></p>
+      <p class="ahora js-precio-ahora"></p>
+      <p class="cond">Pago único · Acceso para siempre · Sin mensualidades</p>
+      <div class="timer">⏳ Tu descuento se reserva por: <b id="timer">15:00</b></div>
+      <button class="btn js-cta" data-origen="precio">Quiero mi acceso con descuento</button>
+      <p class="seguro">🔒 Compra segura · Acceso inmediato en tu correo</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GARANTÍA ===================== -->
+<section class="garantia">
+  <div class="wrap centro">
+    <div class="sec-head"><span class="fita">Pruébalo sin riesgo</span></div>
+    <div class="tipcard">
+      <span class="sello">Garantía Dulce&Fit</span>
+      <h3>7 días de garantía incondicional</h3>
+      <p>Entra, hornea tu primera receta y decide con calma. Si el guía no es para ti, por el motivo que sea, escríbenos dentro de los 7 días y te devolvemos el 100% de tu dinero. Sin preguntas incómodas.</p>
+    </div>
+  </div>
+</section>
+
+<!--
+  =====================================================================
+  SECCIÓN DE TESTIMONIOS: intencionalmente ausente en el lanzamiento.
+  NO publicar testimonios inventados. Cuando existan compradores reales,
+  pedir permiso y agregar aquí sus palabras textuales.
+  =====================================================================
+-->
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq">
+  <div class="wrap" style="max-width:720px">
+    <div class="centro sec-head"><span class="fita">Preguntas frecuentes</span></div>
+    <details><summary>¿Necesito saber de repostería?</summary><div class="resp">No. Las recetas están explicadas paso a paso, con medidas exactas y un tip de cocina en cada una. El Plan de 7 días (Bono 3) te lleva de la receta más fácil a la más elaborada.</div></details>
+    <details><summary>¿Los ingredientes son caros o difíciles de conseguir?</summary><div class="resp">No. La base del guía es harina de avena, huevos, cacao, fruta y aceite de coco: todo de mercado común. La Lista de compras fit (Bono 1) te organiza la compra sección por sección.</div></details>
+    <details><summary>¿Sirve si no tengo airfryer?</summary><div class="resp">Sí. Todas las recetas funcionan en horno tradicional, y un bloque completo ni siquiera necesita horno. La airfryer es una opción extra, no un requisito.</div></details>
+    <details><summary>¿Qué endulzante usan las recetas?</summary><div class="resp">El que tú prefieras. Las recetas usan "endulzante al gusto" y el guía incluye una sección completa que explica stevia, eritritol, fruto del monje, azúcar de coco y dátiles, con sus equivalencias.</div></details>
+    <details><summary>¿Cómo recibo el material?</summary><div class="resp">Al confirmar tu pago recibes en tu correo el acceso al guía y a los 3 bonos en PDF, para leer en tu celular, tablet o computadora, o imprimir si prefieres.</div></details>
+    <details><summary>¿Y si no me gusta?</summary><div class="resp">Tienes 7 días de garantía incondicional: nos escribes y te devolvemos el 100%, sin preguntas.</div></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Dulce&Fit</strong> · © 2026 · Todos los derechos reservados</p>
+    <p>Este es un producto digital de recetas de cocina. No constituye consejo médico ni nutricional y no promete resultados de salud. Para planes de alimentación personalizados, consulta a un profesional.</p>
+  </div>
+</footer>
+
+<!-- ===================== MODAL EMAIL ===================== -->
+<div class="modal-bg" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+  <div class="modal">
+    <button class="cerrar" aria-label="Cerrar" onclick="cerrarModal()">×</button>
+    <h3 id="modal-titulo">¿A qué correo te enviamos el acceso?</h3>
+    <p>Tu guía y los 3 bonos llegan a este correo apenas confirmes tu compra.</p>
+    <div class="error" id="email-error"></div>
+    <input type="email" id="email-input" placeholder="tucorreo@ejemplo.com" autocomplete="email" inputmode="email">
+    <button class="btn" style="width:100%" onclick="irAlCheckout()">Continuar al pago seguro</button>
+  </div>
+</div>
+
+<script>
+/* ============ Precios desde CONFIG ============ */
+document.querySelector('.js-precio-antes').textContent = CONFIG.PRECIO_ANTES;
+document.querySelector('.js-precio-ahora').textContent = CONFIG.PRECIO_AHORA;
+
+/* ============ Timer evergreen (persistente por navegador) ============ */
+(function(){
+  const KEY='df_timer_fin';
+  let fin = localStorage.getItem(KEY);
+  if(!fin || Date.now() > +fin + 24*3600*1000){ // reinicia después de 24h
+    fin = Date.now() + CONFIG.TIMER_MINUTOS*60*1000;
+    localStorage.setItem(KEY, fin);
+  }
+  const el = document.getElementById('timer');
+  function tick(){
+    let ms = Math.max(0, +fin - Date.now());
+    const m = String(Math.floor(ms/60000)).padStart(2,'0');
+    const s = String(Math.floor(ms%60000/1000)).padStart(2,'0');
+    el.textContent = m+':'+s;
+    if(ms>0) requestAnimationFrame(()=>setTimeout(tick,250));
+  }
+  tick();
+})();
+
+/* ============ Captura de email → InitiateCheckout → redirect ============ */
+const modal = document.getElementById('modal');
+let origenClick = 'hero';
+
+document.querySelectorAll('.js-cta').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    origenClick = b.dataset.origen || 'cta';
+    fbq('trackCustom','CTAClick',{origen:origenClick});
+    modal.classList.add('abierto');
+    setTimeout(()=>document.getElementById('email-input').focus(), 60);
+  });
+});
+
+function cerrarModal(){ modal.classList.remove('abierto'); }
+modal.addEventListener('click', e=>{ if(e.target===modal) cerrarModal(); });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') cerrarModal(); });
+document.getElementById('email-input').addEventListener('keydown', e=>{ if(e.key==='Enter') irAlCheckout(); });
+
+function irAlCheckout(){
+  const input = document.getElementById('email-input');
+  const err = document.getElementById('email-error');
+  const email = input.value.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
+    err.textContent = 'Escribe un correo válido para continuar 🙂';
+    input.focus();
+    return;
+  }
+  err.textContent = '';
+  /* InitiateCheckout enriquecido: mejora el match quality del pixel */
+  fbq('track','InitiateCheckout',{content_name:'30 Recetas Dulcemente Fit',origen:origenClick});
+  const sep = CONFIG.CHECKOUT_URL.includes('?') ? '&' : '?';
+  window.location.href = CONFIG.CHECKOUT_URL + sep +
+    encodeURIComponent(CONFIG.EMAIL_PARAM) + '=' + encodeURIComponent(email);
+}
+</script>
+</body>
+</html>
