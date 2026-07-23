@@ -13,7 +13,6 @@
 const CONFIG = {
   PIXEL_ID: "1200760219792748",
   CHECKOUT_URL: "https://pay.hotmart.com/O106840507D",   // Hotmart
-  EMAIL_PARAM: "email",         // Hotmart: prefill del correo en el checkout
   PRECIO_ANTES: "$14 USD",
   PRECIO_AHORA: "$7 USD",
   TIMER_MINUTOS: 15
@@ -147,17 +146,6 @@ section{padding:64px 0}
 
 footer{background:var(--choco);color:#e8d8cf;padding:34px 0;font-size:.85rem;text-align:center}
 footer p+p{margin-top:10px}
-
-/* Modal captura de email */
-.modal-bg{position:fixed;inset:0;background:rgba(43,26,20,.55);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
-.modal-bg.abierto{display:flex}
-.modal{background:#fff;border-radius:24px;padding:36px 30px;max-width:440px;width:100%;text-align:center;position:relative}
-.modal h3{font-size:1.4rem;margin-bottom:8px}
-.modal p{font-size:.95rem;margin-bottom:20px}
-.modal input{width:100%;padding:15px 18px;border:2px solid var(--rosa);border-radius:999px;font-size:1rem;
-  font-family:'Nunito',sans-serif;margin-bottom:14px;text-align:center}
-.modal .cerrar{position:absolute;top:12px;right:18px;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#9c8880}
-.modal .error{color:var(--banner);font-size:.85rem;font-weight:700;min-height:1.2em;margin-bottom:8px}
 
 @media(max-width:860px){
   .hero .wrap{grid-template-columns:1fr;text-align:center}
@@ -323,18 +311,6 @@ footer p+p{margin-top:10px}
   </div>
 </footer>
 
-<!-- ===================== MODAL EMAIL ===================== -->
-<div class="modal-bg" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
-  <div class="modal">
-    <button class="cerrar" aria-label="Cerrar" onclick="cerrarModal()">×</button>
-    <h3 id="modal-titulo">¿A qué correo te enviamos el acceso?</h3>
-    <p>Tu guía y los 3 bonos llegan a este correo apenas confirmes tu compra.</p>
-    <div class="error" id="email-error"></div>
-    <input type="email" id="email-input" placeholder="tucorreo@ejemplo.com" autocomplete="email" inputmode="email">
-    <button class="btn" style="width:100%" onclick="irAlCheckout()">Continuar al pago seguro</button>
-  </div>
-</div>
-
 <script>
 /* ============ Precios desde CONFIG ============ */
 document.querySelector('.js-precio-antes').textContent = CONFIG.PRECIO_ANTES;
@@ -359,16 +335,13 @@ document.querySelector('.js-precio-ahora').textContent = CONFIG.PRECIO_AHORA;
   tick();
 })();
 
-/* ============ Captura de email → InitiateCheckout → redirect ============ */
-const modal = document.getElementById('modal');
-let origenClick = 'hero';
-
+/* ============ CTA de la oferta → InitiateCheckout → checkout en nueva pestaña ============ */
 document.querySelectorAll('.js-cta').forEach(b=>{
   b.addEventListener('click', ()=>{
-    origenClick = b.dataset.origen || 'cta';
-    fbq('trackCustom','CTAClick',{origen:origenClick});
-    modal.classList.add('abierto');
-    setTimeout(()=>document.getElementById('email-input').focus(), 60);
+    const origen = b.dataset.origen || 'cta';
+    fbq('trackCustom','CTAClick',{origen});
+    fbq('track','InitiateCheckout',{content_name:'30 Recetas Dulcemente Fit',origen});
+    window.open(CONFIG.CHECKOUT_URL, '_blank');
   });
 });
 
@@ -378,29 +351,6 @@ document.querySelectorAll('.js-ancla').forEach(a=>{
     fbq('trackCustom','CTAClick',{origen:a.dataset.origen || 'ancla'});
   });
 });
-
-function cerrarModal(){ modal.classList.remove('abierto'); }
-modal.addEventListener('click', e=>{ if(e.target===modal) cerrarModal(); });
-document.addEventListener('keydown', e=>{ if(e.key==='Escape') cerrarModal(); });
-document.getElementById('email-input').addEventListener('keydown', e=>{ if(e.key==='Enter') irAlCheckout(); });
-
-function irAlCheckout(){
-  const input = document.getElementById('email-input');
-  const err = document.getElementById('email-error');
-  const email = input.value.trim();
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
-    err.textContent = 'Escribe un correo válido para continuar 🙂';
-    input.focus();
-    return;
-  }
-  err.textContent = '';
-  /* InitiateCheckout enriquecido: mejora el match quality del pixel */
-  fbq('track','InitiateCheckout',{content_name:'30 Recetas Dulcemente Fit',origen:origenClick});
-  const sep = CONFIG.CHECKOUT_URL.includes('?') ? '&' : '?';
-  window.open(CONFIG.CHECKOUT_URL + sep +
-    encodeURIComponent(CONFIG.EMAIL_PARAM) + '=' + encodeURIComponent(email), '_blank');
-  cerrarModal();
-}
 </script>
 </body>
 </html>
