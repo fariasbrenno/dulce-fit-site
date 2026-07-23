@@ -12,8 +12,8 @@
 <script>
 const CONFIG = {
   PIXEL_ID: "REEMPLAZAR_PIXEL_ID",
-  CHECKOUT_URL: "https://REEMPLAZAR-CHECKOUT-URL",   // Kiwify / Lemon Squeezy
-  EMAIL_PARAM: "email",         // Kiwify: "email" | Lemon Squeezy: "checkout[email]"
+  CHECKOUT_URL: "https://pay.hotmart.com/O106840507D",   // Hotmart
+  EMAIL_PARAM: "email",         // Hotmart: prefill del correo en el checkout
   PRECIO_ANTES: "$14 USD",
   PRECIO_AHORA: "$7 USD",
   TIMER_MINUTOS: 15
@@ -184,7 +184,7 @@ footer p+p{margin-top:10px}
       <span class="badge">📖 Ebook digital · Acceso inmediato</span>
       <h1>Vuelve a disfrutar el postre <em>todos los días</em></h1>
       <p class="sub">30 recetas de repostería fit sin azúcar añadida, con ingredientes de cualquier mercado y conversión para airfryer en cada receta.</p>
-      <button class="btn js-cta" data-origen="hero">Quiero mis recetas ahora</button>
+      <a class="btn js-ancla" href="#oferta" data-origen="hero">Quiero mis recetas ahora</a>
       <p class="btn-nota">✅ Garantía de 7 días · Recíbelo en tu correo en minutos</p>
     </div>
     <div class="hero-foto">
@@ -372,6 +372,13 @@ document.querySelectorAll('.js-cta').forEach(b=>{
   });
 });
 
+/* Anclas que llevan a la sección de oferta (solo tracking) */
+document.querySelectorAll('.js-ancla').forEach(a=>{
+  a.addEventListener('click', ()=>{
+    fbq('trackCustom','CTAClick',{origen:a.dataset.origen || 'ancla'});
+  });
+});
+
 function cerrarModal(){ modal.classList.remove('abierto'); }
 modal.addEventListener('click', e=>{ if(e.target===modal) cerrarModal(); });
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') cerrarModal(); });
@@ -390,8 +397,9 @@ function irAlCheckout(){
   /* InitiateCheckout enriquecido: mejora el match quality del pixel */
   fbq('track','InitiateCheckout',{content_name:'30 Recetas Dulcemente Fit',origen:origenClick});
   const sep = CONFIG.CHECKOUT_URL.includes('?') ? '&' : '?';
-  window.location.href = CONFIG.CHECKOUT_URL + sep +
-    encodeURIComponent(CONFIG.EMAIL_PARAM) + '=' + encodeURIComponent(email);
+  window.open(CONFIG.CHECKOUT_URL + sep +
+    encodeURIComponent(CONFIG.EMAIL_PARAM) + '=' + encodeURIComponent(email), '_blank');
+  cerrarModal();
 }
 </script>
 </body>
